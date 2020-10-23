@@ -1,0 +1,12 @@
+C:\Users\Alumno\Desktop\Veterinaria\Veterinaria\PersonasYMascotas\Inicio\bin\Debug\Inicio.exe.config
+C:\Users\Alumno\Desktop\Veterinaria\Veterinaria\PersonasYMascotas\Inicio\bin\Debug\Inicio.exe
+C:\Users\Alumno\Desktop\Veterinaria\Veterinaria\PersonasYMascotas\Inicio\bin\Debug\Inicio.pdb
+C:\Users\Alumno\Desktop\Veterinaria\Veterinaria\PersonasYMascotas\Inicio\bin\Debug\Inicio.xml
+C:\Users\Alumno\Desktop\Veterinaria\Veterinaria\PersonasYMascotas\Inicio\obj\Debug\Inicio.vbprojAssemblyReference.cache
+C:\Users\Alumno\Desktop\Veterinaria\Veterinaria\PersonasYMascotas\Inicio\obj\Debug\Inicio.FormInicio.resources
+C:\Users\Alumno\Desktop\Veterinaria\Veterinaria\PersonasYMascotas\Inicio\obj\Debug\Inicio.Resources.resources
+C:\Users\Alumno\Desktop\Veterinaria\Veterinaria\PersonasYMascotas\Inicio\obj\Debug\Inicio.vbproj.GenerateResource.cache
+C:\Users\Alumno\Desktop\Veterinaria\Veterinaria\PersonasYMascotas\Inicio\obj\Debug\Inicio.vbproj.CoreCompileInputs.cache
+C:\Users\Alumno\Desktop\Veterinaria\Veterinaria\PersonasYMascotas\Inicio\obj\Debug\Inicio.exe
+C:\Users\Alumno\Desktop\Veterinaria\Veterinaria\PersonasYMascotas\Inicio\obj\Debug\Inicio.xml
+C:\Users\Alumno\Desktop\Veterinaria\Veterinaria\PersonasYMascotas\Inicio\obj\Debug\Inicio.pdb
