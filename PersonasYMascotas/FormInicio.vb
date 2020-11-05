@@ -11,4 +11,8 @@
     Private Sub FormPersonasToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles FormPersonasToolStripMenuItem2.Click
         FormPersonas.ShowDialog()
     End Sub
+
+    Private Sub FormMascotasToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles FormMascotasToolStripMenuItem2.Click
+        FormMascotas.ShowDialog()
+    End Sub
 End Class

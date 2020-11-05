@@ -1,6 +1,6 @@
 ﻿Public Class FormPersonas
 
-    Private ListaTelefono As List(Of Integer)
+    Private ListaTelefono As New List(Of Integer)
 
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles labelPersonas.Click
 
@@ -17,17 +17,16 @@
         Dim telefono As Integer
         Dim direccion As String
 
-        ci = textCi.Text
+        ci = Convert.ToInt32(textCi.Text)
         nombre = textNombre.Text
         direccion = textDireccion.Text
-
-        labelVerResultado.Text = ci & "   |   " & nombre & "   |   " & telefono & "   |   " & direccion
 
         Try
             Dim newPersona As New Persona()
             newPersona.Ci = ci
             newPersona.Nombre = nombre
             newPersona.Direccion = direccion
+            newPersona.ListaTelefono = ListaTelefono
 
             Dim logica As New logicaPersona
             logica.altaPersona(newPersona)
@@ -76,7 +75,7 @@
         telefono = Convert.ToInt32(textBoxTelefono.Text)
 
         listViewTelefonos.Items.Add(telefono)
-
+        ListaTelefono.Add(telefono)
         textBoxTelefono.Text = ""
     End Sub
 
@@ -91,14 +90,14 @@
             Dim iterador As Integer = 0
 
             While iterador < ListaTelefono.Count
-                If telefonoEliminado < ListaTelefono.Item(iterador) Then
+                If telefonoEliminado = ListaTelefono.Item(iterador) Then
                     ListaTelefono.Remove(telefonoEliminado)
                     iterador = ListaTelefono.Count
                 End If
                 iterador = iterador + 1
             End While
 
-            ListaTelefono.Clear()
+            listViewTelefonos.Clear()
             iterador = 0
 
             While iterador < ListaTelefono.Count

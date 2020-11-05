@@ -1,6 +1,5 @@
 ﻿Imports Npgsql
 Public Class persistenciaPersonas
-
     Sub New()
     End Sub
     Dim Connection = New Npgsql.NpgsqlConnection
@@ -14,7 +13,7 @@ Public Class persistenciaPersonas
             Dim cmd As New Npgsql.NpgsqlCommand
             cmd.Connection = Connection
 
-            Dim cadenaDeComando = "INSERT INTO Personas (ci,Nombre,direccion) VALUES (@ci_,@nombre_,@direccion_);"
+            Dim cadenaDeComando = "INSERT INTO persona (ci, nombre, direccion) VALUES (@ci_ ,@nombre_ ,@direccion_);"
             cmd.CommandText = cadenaDeComando
 
             cmd.Parameters.Add("@ci_", NpgsqlTypes.NpgsqlDbType.Integer).Value = nuevaPersona.Ci
@@ -33,11 +32,11 @@ Public Class persistenciaPersonas
                     cmd = New Npgsql.NpgsqlCommand()
                     cmd.Connection = Connection
 
-                    cadenaDeComando = "INSERT INTO telefonos (ci, telefono) VALUES (@ci_,@telefono_);"
+                    cadenaDeComando = "INSERT INTO telefono (ci, tel) VALUES (@ci_,@te Dim cmd As New pgsql.NpgsqlCommandl_);"
                     cmd.CommandText = cadenaDeComando
 
                     cmd.Parameters.Add("@ci_", NpgsqlTypes.NpgsqlDbType.Integer).Value = nuevaPersona.Ci
-                    cmd.Parameters.Add("@telefono_", NpgsqlTypes.NpgsqlDbType.Integer).Value = nuevaPersona.ListaTelefono.Item(i)
+                    cmd.Parameters.Add("@tel_", NpgsqlTypes.NpgsqlDbType.Integer).Value = nuevaPersona.ListaTelefono.Item(i)
 
                     resultado = cmd.ExecuteNonQuery()
 
@@ -63,7 +62,7 @@ Public Class persistenciaPersonas
             Dim cmd As New Npgsql.NpgsqlCommand
             cmd.Connection = Connection
 
-            Dim cadenaDeComando = "INSERT INTO Personas (ci,Nombre,direccion) VALUES (@ci_,@nombre_,@direccion_);"
+            Dim cadenaDeComando = "INSERT INTO persona (ci, nombre, direccion) VALUES (@ci_,@nombre_,@direccion_);"
             cmd.CommandText = cadenaDeComando
 
             cmd.Parameters.Add("@ci_", NpgsqlTypes.NpgsqlDbType.Integer).Value = nuevaPersona.Ci
@@ -72,25 +71,25 @@ Public Class persistenciaPersonas
             Dim resultado As Integer
             resultado = cmd.ExecuteNonQuery()
 
-    
+
             If resultado = 1 Then
                 Dim i As Integer
                 i = 0
-                    cadenaDeComando = "DELETE * FROM telefonos WHERE telefono.ci = @ci"
-                    cmd.CommandText = cadenaDeComando
-                    cmd.Parameters.Add("@ci_", NpgsqlTypes.NpgsqlDbType.Integer).Value = nuevaPersona.Ci
-                    resultado = cmd.ExecuteNonQuery()
+                cadenaDeComando = "DELETE FROM telefono WHERE telefono.ci = @ci_"
+                cmd.CommandText = cadenaDeComando
+                cmd.Parameters.Add("@ci_", NpgsqlTypes.NpgsqlDbType.Integer).Value = nuevaPersona.Ci
+                resultado = cmd.ExecuteNonQuery()
 
                 'Modificar telefonos
                 While i < nuevaPersona.ListaTelefono.Count
                     cmd = New Npgsql.NpgsqlCommand()
                     cmd.Connection = Connection
 
-                    cadenaDeComando = "INSERT INTO telefonos (ci, telefono) VALUES (@ci_,@telefono_);"
+                    cadenaDeComando = "INSERT INTO telefono (tel, ci) VALUES (@tel_, @ci_);"
                     cmd.CommandText = cadenaDeComando
 
                     cmd.Parameters.Add("@ci_", NpgsqlTypes.NpgsqlDbType.Integer).Value = nuevaPersona.Ci
-                    cmd.Parameters.Add("@telefono_", NpgsqlTypes.NpgsqlDbType.Integer).Value = nuevaPersona.ListaTelefono.Item(i)
+                    cmd.Parameters.Add("@tel_", NpgsqlTypes.NpgsqlDbType.Integer).Value = nuevaPersona.ListaTelefono.Item(i)
 
                     resultado = cmd.ExecuteNonQuery()
 
@@ -106,16 +105,16 @@ Public Class persistenciaPersonas
     End Sub
 
     Public Function Buscarpersona(ci As Integer) As Persona
-        Dim personaNueva As Persona
+        Dim personaNueva As New Persona
         Try
             Dim ClaseSln As New Conexion
             Connection = ClaseSln.AbrirConexion
-            Dim cmd As Npgsql.NpgsqlCommand
+            Dim cmd As New Npgsql.NpgsqlCommand
             cmd.Connection = Connection
 
-            Dim cadenaDeComandos = "Select * FROM personas WHERE cedulaPersona = @ci"
+            Dim cadenaDeComandos = "Select * FROM persona WHERE ci = @ci_"
             cmd.CommandText = cadenaDeComandos
-            cmd.Parameters.Add("@ci", NpgsqlTypes.NpgsqlDbType.Integer).Value = ci
+            cmd.Parameters.Add("@ci_", NpgsqlTypes.NpgsqlDbType.Integer).Value = ci
 
             Dim reader As Npgsql.NpgsqlDataReader = cmd.ExecuteReader
 
@@ -145,7 +144,7 @@ Public Class persistenciaPersonas
             Dim cmd As New Npgsql.NpgsqlCommand
             cmd.Connection = Connection
 
-            Dim cadenaDeComandos = "SELECT * FROM PERSONA"
+            Dim cadenaDeComandos = "SELECT * FROM persona"
 
             cmd.CommandText = cadenaDeComandos
 
