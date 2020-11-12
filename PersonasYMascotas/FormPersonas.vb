@@ -58,15 +58,25 @@
     End Sub
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        listViewTelefonos.Clear()
+
         Dim cedula As Integer
         cedula = textCi.Text
+
         Dim personaNueva As New Persona
         Dim logica As New logicaPersona
         personaNueva = logica.buscarPersona(cedula)
+        personaNueva.ListaTelefono = logica.buscarTelefono(cedula)
+
+
         If IsNothing(personaNueva) Then
         Else
             textNombre.Text = personaNueva.Nombre
             textDireccion.Text = personaNueva.Direccion
+
+            For index As Integer = 0 To personaNueva.ListaTelefono.Count - 1
+                listViewTelefonos.Items.Add(personaNueva.ListaTelefono(index))
+            Next
         End If
     End Sub
 

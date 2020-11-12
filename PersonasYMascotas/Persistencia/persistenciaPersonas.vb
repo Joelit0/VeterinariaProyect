@@ -4,7 +4,6 @@ Public Class persistenciaPersonas
     End Sub
     Dim Connection = New Npgsql.NpgsqlConnection
 
-    'alta
     Public Sub altaPersona(nuevaPersona As Persona)
         Try
             Dim classConnection = New Conexion
@@ -27,12 +26,11 @@ Public Class persistenciaPersonas
                 Dim i As Integer
                 i = 0
 
-                'Ingresar telefonos
                 While i < nuevaPersona.ListaTelefono.Count
                     cmd = New Npgsql.NpgsqlCommand()
                     cmd.Connection = Connection
 
-                    cadenaDeComando = "INSERT INTO telefono (ci, tel) VALUES (@ci_,@te Dim cmd As New pgsql.NpgsqlCommandl_);"
+                    cadenaDeComando = "INSERT INTO telefono (ci, tel) VALUES (@ci_,@tel_);"
                     cmd.CommandText = cadenaDeComando
 
                     cmd.Parameters.Add("@ci_", NpgsqlTypes.NpgsqlDbType.Integer).Value = nuevaPersona.Ci
@@ -53,7 +51,6 @@ Public Class persistenciaPersonas
 
     End Sub
 
-    'modificar
     Public Sub modificarPersona(nuevaPersona As Persona)
         Try
             Dim classConnection = New Conexion
@@ -80,7 +77,6 @@ Public Class persistenciaPersonas
                 cmd.Parameters.Add("@ci_", NpgsqlTypes.NpgsqlDbType.Integer).Value = nuevaPersona.Ci
                 resultado = cmd.ExecuteNonQuery()
 
-                'Modificar telefonos
                 While i < nuevaPersona.ListaTelefono.Count
                     cmd = New Npgsql.NpgsqlCommand()
                     cmd.Connection = Connection
@@ -104,34 +100,66 @@ Public Class persistenciaPersonas
         End Try
     End Sub
 
-    Public Function Buscarpersona(ci As Integer) As Persona
+    Public Function Buscarpersona(cedula As Integer)
         Dim personaNueva As New Persona
         Try
             Dim ClaseSln As New Conexion
-            Connection = ClaseSln.AbrirConexion
+            Dim Connection = ClaseSln.AbrirConexion
             Dim cmd As New Npgsql.NpgsqlCommand
             cmd.Connection = Connection
 
-            Dim cadenaDeComandos = "Select * FROM persona WHERE ci = @ci_"
+            Dim cadenaDeComandos = "Select * FROM persona p WHERE p.ci = @ci_"
+
             cmd.CommandText = cadenaDeComandos
-            cmd.Parameters.Add("@ci_", NpgsqlTypes.NpgsqlDbType.Integer).Value = ci
+            cmd.Parameters.Add("@ci_", NpgsqlTypes.NpgsqlDbType.Integer).Value = cedula
 
-            Dim reader As Npgsql.NpgsqlDataReader = cmd.ExecuteReader
+            Dim reader As Npgsql.NpgsqlDataReader
+            reader = cmd.ExecuteReader
 
-
-            If reader.HasRows Then
-                reader.Read()
-
+            Dim i As Integer
+            i = 0
+            While (reader.Read())
                 personaNueva.Ci = Convert.ToInt32(reader(0).ToString)
                 personaNueva.Nombre = reader(1).ToString
                 personaNueva.Direccion = reader(2).ToString
-            End If
+            End While
 
+            Return personaNueva
         Catch ex As Exception
             Throw ex
         End Try
 
         Return personaNueva
+    End Function
+
+    Public Function buscarTelefono(cedula As Integer)
+        Dim ListaTelefono As New List(Of Integer)
+        Try
+            Dim ClaseSln As New Conexion
+            Dim Connection = ClaseSln.AbrirConexion
+            Dim cmd As New Npgsql.NpgsqlCommand
+            cmd.Connection = Connection
+
+            Dim cadenaDeComandos = "Select * FROM telefono t WHERE t.ci = @ci_"
+
+            cmd.CommandText = cadenaDeComandos
+            cmd.Parameters.Add("@ci_", NpgsqlTypes.NpgsqlDbType.Integer).Value = cedula
+
+            Dim reader As Npgsql.NpgsqlDataReader
+            reader = cmd.ExecuteReader
+
+            Dim i As Integer
+            i = 0
+            While (reader.Read())
+                Dim telefono = Convert.ToInt32(reader(0).ToString)
+                ListaTelefono.Add(telefono)
+            End While
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+        Return ListaTelefono
     End Function
 
     Public Function listarPersona() As List(Of Persona)
