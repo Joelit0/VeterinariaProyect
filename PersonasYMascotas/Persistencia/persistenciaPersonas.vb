@@ -1,4 +1,5 @@
 ﻿Imports Npgsql
+
 Public Class persistenciaPersonas
     Sub New()
     End Sub

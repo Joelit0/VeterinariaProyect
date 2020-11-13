@@ -4,10 +4,10 @@
         persistencia.altaPersona(nuevaPersona)
     End Sub
 
-    Public Function modificarPersona(nuevaPersona As Persona)
+    Public Sub modificarPersona(nuevaPersona As Persona)
         Dim persistencia As New persistenciaPersonas
         persistencia.modificarPersona(nuevaPersona)
-    End Function
+    End Sub
 
     Public Function ListarPersona()
         Dim persistencia As New persistenciaPersonas

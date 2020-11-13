@@ -106,6 +106,12 @@
   <ItemGroup>
     <Compile Include="entidades\Mascota.vb" />
     <Compile Include="entidades\Persona.vb" />
+    <Compile Include="FormListarMascota.Designer.vb">
+      <DependentUpon>FormListarMascota.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormListarMascota.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormInicio.Designer.vb">
       <DependentUpon>FormInicio.vb</DependentUpon>
     </Compile>
@@ -131,6 +137,7 @@
     <Compile Include="FormMascotas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Logica\logicaMascota.vb" />
     <Compile Include="Logica\logicaPersona.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -148,11 +155,15 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Persistencia\conexion.vb" />
+    <Compile Include="Persistencia\persistenciaMascotas.vb" />
     <Compile Include="Persistencia\persistenciaPersonas.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FormInicio.resx">
       <DependentUpon>FormInicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListarMascota.resx">
+      <DependentUpon>FormListarMascota.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormListarPersona.resx">
       <DependentUpon>FormListarPersona.vb</DependentUpon>
