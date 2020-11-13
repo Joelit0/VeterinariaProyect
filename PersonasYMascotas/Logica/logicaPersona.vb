@@ -4,6 +4,16 @@
         persistencia.altaPersona(nuevaPersona)
     End Sub
 
+    Public Function modificarPersona(nuevaPersona As Persona)
+        Dim persistencia As New persistenciaPersonas
+        persistencia.modificarPersona(nuevaPersona)
+    End Function
+
+    Public Function ListarPersona()
+        Dim persistencia As New persistenciaPersonas
+        Return persistencia.listarPersona()
+    End Function
+
     Public Function buscarPersona(cedula As Integer)
         Dim persistencia As New persistenciaPersonas
         Return persistencia.Buscarpersona(cedula)

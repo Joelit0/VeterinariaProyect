@@ -112,6 +112,12 @@
     <Compile Include="FormInicio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormListarPersona.Designer.vb">
+      <DependentUpon>FormListarPersona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormListarPersona.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormPersonas.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
   <ItemGroup>
     <EmbeddedResource Include="FormInicio.resx">
       <DependentUpon>FormInicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListarPersona.resx">
+      <DependentUpon>FormListarPersona.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMascotas.resx">
       <DependentUpon>FormMascotas.vb</DependentUpon>

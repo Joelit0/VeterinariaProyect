@@ -522,3 +522,4 @@ C:\Users\Alumno\Desktop\VeterinariaProyect\PersonasYMascotas\obj\Debug\PersonasY
 C:\Users\Alumno\Desktop\VeterinariaProyect\PersonasYMascotas\obj\Debug\PersonasYMascotas.exe
 C:\Users\Alumno\Desktop\VeterinariaProyect\PersonasYMascotas\obj\Debug\PersonasYMascotas.xml
 C:\Users\Alumno\Desktop\VeterinariaProyect\PersonasYMascotas\obj\Debug\PersonasYMascotas.pdb
+C:\Users\Alumno\Desktop\VeterinariaProyect\PersonasYMascotas\obj\Debug\PersonasYMascotas.FormListarPersona.resources

@@ -9,10 +9,22 @@
     End Sub
 
     Private Sub FormPersonasToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles FormPersonasToolStripMenuItem2.Click
-        FormPersonas.ShowDialog()
+
     End Sub
 
     Private Sub FormMascotasToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles FormMascotasToolStripMenuItem2.Click
         FormMascotas.ShowDialog()
+    End Sub
+
+    Private Sub FormInicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub AltaBuscarYModifcarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaBuscarYModifcarToolStripMenuItem.Click
+        FormPersonas.ShowDialog()
+    End Sub
+
+    Private Sub ListarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarToolStripMenuItem.Click
+        FormListarPersona.ShowDialog()
     End Sub
 End Class

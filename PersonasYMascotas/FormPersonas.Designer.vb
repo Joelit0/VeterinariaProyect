@@ -37,6 +37,7 @@ Partial Class FormPersonas
         Me.addTelefonos = New System.Windows.Forms.Button()
         Me.textBoxTelefono = New System.Windows.Forms.TextBox()
         Me.listViewTelefonos = New System.Windows.Forms.ListView()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -50,30 +51,30 @@ Partial Class FormPersonas
         'labelPersonas
         '
         Me.labelPersonas.AutoSize = True
-        Me.labelPersonas.Font = New System.Drawing.Font("Rockwell", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelPersonas.Location = New System.Drawing.Point(383, 35)
+        Me.labelPersonas.Font = New System.Drawing.Font("Segoe Print", 29.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelPersonas.Location = New System.Drawing.Point(222, 14)
         Me.labelPersonas.Name = "labelPersonas"
-        Me.labelPersonas.Size = New System.Drawing.Size(55, 16)
+        Me.labelPersonas.Size = New System.Drawing.Size(200, 69)
         Me.labelPersonas.TabIndex = 5
         Me.labelPersonas.Text = "Personas"
         '
         'textCi
         '
-        Me.textCi.Location = New System.Drawing.Point(325, 133)
+        Me.textCi.Location = New System.Drawing.Point(196, 133)
         Me.textCi.Name = "textCi"
         Me.textCi.Size = New System.Drawing.Size(94, 20)
         Me.textCi.TabIndex = 2
         '
         'textNombre
         '
-        Me.textNombre.Location = New System.Drawing.Point(325, 164)
+        Me.textNombre.Location = New System.Drawing.Point(196, 170)
         Me.textNombre.Name = "textNombre"
         Me.textNombre.Size = New System.Drawing.Size(94, 20)
         Me.textNombre.TabIndex = 3
         '
         'textDireccion
         '
-        Me.textDireccion.Location = New System.Drawing.Point(325, 231)
+        Me.textDireccion.Location = New System.Drawing.Point(196, 237)
         Me.textDireccion.Name = "textDireccion"
         Me.textDireccion.Size = New System.Drawing.Size(94, 20)
         Me.textDireccion.TabIndex = 5
@@ -81,7 +82,7 @@ Partial Class FormPersonas
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(302, 136)
+        Me.Label3.Location = New System.Drawing.Point(173, 136)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(17, 13)
         Me.Label3.TabIndex = 6
@@ -90,7 +91,7 @@ Partial Class FormPersonas
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(275, 167)
+        Me.Label4.Location = New System.Drawing.Point(146, 173)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(44, 13)
         Me.Label4.TabIndex = 7
@@ -99,7 +100,7 @@ Partial Class FormPersonas
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(270, 201)
+        Me.Label5.Location = New System.Drawing.Point(141, 207)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(49, 13)
         Me.Label5.TabIndex = 8
@@ -108,7 +109,7 @@ Partial Class FormPersonas
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(267, 231)
+        Me.Label6.Location = New System.Drawing.Point(138, 237)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(52, 13)
         Me.Label6.TabIndex = 9
@@ -116,17 +117,17 @@ Partial Class FormPersonas
         '
         'btnCapturarPersonas
         '
-        Me.btnCapturarPersonas.Location = New System.Drawing.Point(325, 269)
+        Me.btnCapturarPersonas.Location = New System.Drawing.Point(196, 326)
         Me.btnCapturarPersonas.Name = "btnCapturarPersonas"
-        Me.btnCapturarPersonas.Size = New System.Drawing.Size(94, 24)
+        Me.btnCapturarPersonas.Size = New System.Drawing.Size(94, 77)
         Me.btnCapturarPersonas.TabIndex = 10
-        Me.btnCapturarPersonas.Text = "Agregar Persona"
+        Me.btnCapturarPersonas.Text = "Agregar"
         Me.btnCapturarPersonas.UseVisualStyleBackColor = True
         '
         'labelVerResultado
         '
         Me.labelVerResultado.AutoSize = True
-        Me.labelVerResultado.Location = New System.Drawing.Point(336, 336)
+        Me.labelVerResultado.Location = New System.Drawing.Point(393, 336)
         Me.labelVerResultado.Name = "labelVerResultado"
         Me.labelVerResultado.Size = New System.Drawing.Size(0, 13)
         Me.labelVerResultado.TabIndex = 11
@@ -134,7 +135,7 @@ Partial Class FormPersonas
         '
         'btnBuscar
         '
-        Me.btnBuscar.Location = New System.Drawing.Point(438, 132)
+        Me.btnBuscar.Location = New System.Drawing.Point(306, 132)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(48, 21)
         Me.btnBuscar.TabIndex = 13
@@ -143,7 +144,7 @@ Partial Class FormPersonas
         '
         'addTelefonos
         '
-        Me.addTelefonos.Location = New System.Drawing.Point(438, 198)
+        Me.addTelefonos.Location = New System.Drawing.Point(309, 204)
         Me.addTelefonos.Name = "addTelefonos"
         Me.addTelefonos.Size = New System.Drawing.Size(23, 20)
         Me.addTelefonos.TabIndex = 14
@@ -152,7 +153,7 @@ Partial Class FormPersonas
         '
         'textBoxTelefono
         '
-        Me.textBoxTelefono.Location = New System.Drawing.Point(325, 198)
+        Me.textBoxTelefono.Location = New System.Drawing.Point(196, 204)
         Me.textBoxTelefono.Name = "textBoxTelefono"
         Me.textBoxTelefono.Size = New System.Drawing.Size(94, 20)
         Me.textBoxTelefono.TabIndex = 15
@@ -160,18 +161,28 @@ Partial Class FormPersonas
         'listViewTelefonos
         '
         Me.listViewTelefonos.HideSelection = False
-        Me.listViewTelefonos.Location = New System.Drawing.Point(479, 198)
+        Me.listViewTelefonos.Location = New System.Drawing.Point(350, 204)
         Me.listViewTelefonos.Name = "listViewTelefonos"
         Me.listViewTelefonos.Size = New System.Drawing.Size(151, 95)
         Me.listViewTelefonos.TabIndex = 16
         Me.listViewTelefonos.UseCompatibleStateImageBehavior = False
         Me.listViewTelefonos.View = System.Windows.Forms.View.List
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(350, 326)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(94, 77)
+        Me.Button1.TabIndex = 17
+        Me.Button1.Text = "Modificar"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'FormPersonas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(618, 450)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.listViewTelefonos)
         Me.Controls.Add(Me.textBoxTelefono)
         Me.Controls.Add(Me.addTelefonos)
@@ -209,4 +220,5 @@ Partial Class FormPersonas
     Friend WithEvents addTelefonos As Button
     Friend WithEvents textBoxTelefono As TextBox
     Friend WithEvents listViewTelefonos As ListView
+    Friend WithEvents Button1 As Button
 End Class

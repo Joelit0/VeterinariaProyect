@@ -6,15 +6,9 @@
 
     End Sub
 
-    Private Sub CiPersonaInput_TextChanged(sender As Object, e As EventArgs) Handles textCi.TextChanged
-
-    End Sub
-
-
     Public Sub btnCapturarPersonas_Click(sender As Object, e As EventArgs) Handles btnCapturarPersonas.Click
         Dim ci As Integer
         Dim nombre As String
-        Dim telefono As Integer
         Dim direccion As String
 
         ci = Convert.ToInt32(textCi.Text)
@@ -34,8 +28,6 @@
         Catch ex As Exception
             MsgBox("Ah ocurrido un error: " + ex.Message)
         End Try
-
-
     End Sub
 
     Private Sub labelVerResultado_Click(sender As Object, e As EventArgs) Handles labelVerResultado.Click
@@ -50,14 +42,12 @@
     Private Sub Telefono_TextChanged(sender As Object, e As EventArgs)
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub listaTelefonos_SelectedIndexChanged(sender As Object, e As EventArgs)
     End Sub
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        textNombre.Clear()
+        textDireccion.Clear()
         listViewTelefonos.Clear()
 
         Dim cedula As Integer
@@ -67,7 +57,7 @@
         Dim logica As New logicaPersona
         personaNueva = logica.buscarPersona(cedula)
         personaNueva.ListaTelefono = logica.buscarTelefono(cedula)
-
+        ListaTelefono = personaNueva.ListaTelefono
 
         If IsNothing(personaNueva) Then
         Else
@@ -118,7 +108,30 @@
         End Try
     End Sub
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles textBoxTelefono.TextChanged
 
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim ci As Integer
+        Dim nombre As String
+        Dim direccion As String
+
+        ci = Convert.ToInt32(textCi.Text)
+        nombre = textNombre.Text
+        direccion = textDireccion.Text
+
+        Try
+            Dim newPersona As New Persona()
+            newPersona.Ci = ci
+            newPersona.Nombre = nombre
+            newPersona.Direccion = direccion
+            newPersona.ListaTelefono = ListaTelefono
+
+            Dim logica As New logicaPersona
+            logica.modificarPersona(newPersona)
+
+        Catch ex As Exception
+            MsgBox("Ah ocurrido un error: " + ex.Message)
+        End Try
     End Sub
 End Class
+

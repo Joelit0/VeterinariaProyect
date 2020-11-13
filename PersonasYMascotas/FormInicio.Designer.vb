@@ -22,23 +22,15 @@ Partial Class FormInicio
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FormPersonasToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.FormMascotasToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.AltaBuscarYModifcarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.PersonasYMascotas.My.Resources.Resources.logo_veterinaria
-        Me.PictureBox1.Location = New System.Drawing.Point(310, 12)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(211, 170)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
         '
         'MenuStrip1
         '
@@ -51,15 +43,38 @@ Partial Class FormInicio
         '
         'FormPersonasToolStripMenuItem2
         '
+        Me.FormPersonasToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaBuscarYModifcarToolStripMenuItem, Me.ListarToolStripMenuItem})
         Me.FormPersonasToolStripMenuItem2.Name = "FormPersonasToolStripMenuItem2"
-        Me.FormPersonasToolStripMenuItem2.Size = New System.Drawing.Size(94, 20)
-        Me.FormPersonasToolStripMenuItem2.Text = "FormPersonas"
+        Me.FormPersonasToolStripMenuItem2.Size = New System.Drawing.Size(66, 20)
+        Me.FormPersonasToolStripMenuItem2.Text = "Personas"
         '
         'FormMascotasToolStripMenuItem2
         '
         Me.FormMascotasToolStripMenuItem2.Name = "FormMascotasToolStripMenuItem2"
-        Me.FormMascotasToolStripMenuItem2.Size = New System.Drawing.Size(97, 20)
-        Me.FormMascotasToolStripMenuItem2.Text = "FormMascotas"
+        Me.FormMascotasToolStripMenuItem2.Size = New System.Drawing.Size(69, 20)
+        Me.FormMascotasToolStripMenuItem2.Text = "Mascotas"
+        '
+        'AltaBuscarYModifcarToolStripMenuItem
+        '
+        Me.AltaBuscarYModifcarToolStripMenuItem.Name = "AltaBuscarYModifcarToolStripMenuItem"
+        Me.AltaBuscarYModifcarToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
+        Me.AltaBuscarYModifcarToolStripMenuItem.Text = "Alta - Buscar - Modifcar"
+        '
+        'ListarToolStripMenuItem
+        '
+        Me.ListarToolStripMenuItem.Name = "ListarToolStripMenuItem"
+        Me.ListarToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
+        Me.ListarToolStripMenuItem.Text = "Listar"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.PersonasYMascotas.My.Resources.Resources.logo_veterinaria
+        Me.PictureBox1.Location = New System.Drawing.Point(82, 51)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(632, 351)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
         '
         'FormInicio
         '
@@ -72,9 +87,9 @@ Partial Class FormInicio
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "FormInicio"
         Me.Text = "FormInicio"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -84,4 +99,6 @@ Partial Class FormInicio
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents FormPersonasToolStripMenuItem2 As ToolStripMenuItem
     Friend WithEvents FormMascotasToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents AltaBuscarYModifcarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ListarToolStripMenuItem As ToolStripMenuItem
 End Class

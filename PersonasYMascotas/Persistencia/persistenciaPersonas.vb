@@ -59,7 +59,7 @@ Public Class persistenciaPersonas
             Dim cmd As New Npgsql.NpgsqlCommand
             cmd.Connection = Connection
 
-            Dim cadenaDeComando = "INSERT INTO persona (ci, nombre, direccion) VALUES (@ci_,@nombre_,@direccion_);"
+            Dim cadenaDeComando = "UPDATE persona set nombre = @nombre_, direccion = @direccion_ where persona.ci = @ci_;"
             cmd.CommandText = cadenaDeComando
 
             cmd.Parameters.Add("@ci_", NpgsqlTypes.NpgsqlDbType.Integer).Value = nuevaPersona.Ci
@@ -163,9 +163,8 @@ Public Class persistenciaPersonas
     End Function
 
     Public Function listarPersona() As List(Of Persona)
+        Dim listaPersonas As New List(Of Persona)
         Try
-            Dim listaPersonas As List(Of Persona)
-
             Dim claseConexion As New Conexion
 
             Connection = claseConexion.AbrirConexion()
@@ -181,13 +180,18 @@ Public Class persistenciaPersonas
 
             If Lector.HasRows Then
                 While Lector.Read()
-
+                    Dim personaListada As New Persona
+                    personaListada.Nombre = Lector(1).ToString
+                    listaPersonas.Add(personaListada)
                 End While
             End If
+
         Catch ex As Exception
             Throw ex
         Finally
             Connection.Close()
         End Try
+
+        Return listaPersonas
     End Function
 End Class
