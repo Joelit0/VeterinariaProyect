@@ -14,4 +14,8 @@
     Private Sub AltaModificarBuscarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaModificarBuscarToolStripMenuItem.Click
         FormMascotas.ShowDialog()
     End Sub
+
+    Private Sub BajaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaToolStripMenuItem.Click
+        FormBajaPersona.ShowDialog()
+    End Sub
 End Class

@@ -524,3 +524,4 @@ C:\Users\Alumno\Desktop\VeterinariaProyect\PersonasYMascotas\obj\Debug\PersonasY
 C:\Users\Alumno\Desktop\VeterinariaProyect\PersonasYMascotas\obj\Debug\PersonasYMascotas.pdb
 C:\Users\Alumno\Desktop\VeterinariaProyect\PersonasYMascotas\obj\Debug\PersonasYMascotas.FormListarPersona.resources
 C:\Users\Alumno\Desktop\VeterinariaProyect\PersonasYMascotas\obj\Debug\PersonasYMascotas.FormListarMascota.resources
+C:\Users\Alumno\Desktop\VeterinariaProyect\PersonasYMascotas\obj\Debug\PersonasYMascotas.FormBajaPersona.resources

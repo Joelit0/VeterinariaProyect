@@ -9,6 +9,11 @@
         persistencia.modificarPersona(nuevaPersona)
     End Sub
 
+    Public Sub bajaPersona(cedula As Integer)
+        Dim persistencia As New persistenciaPersonas
+        persistencia.bajaPersona(cedula)
+    End Sub
+
     Public Function ListarPersona()
         Dim persistencia As New persistenciaPersonas
         Return persistencia.listarPersona()

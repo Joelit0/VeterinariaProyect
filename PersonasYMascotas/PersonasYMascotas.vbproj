@@ -106,6 +106,12 @@
   <ItemGroup>
     <Compile Include="entidades\Mascota.vb" />
     <Compile Include="entidades\Persona.vb" />
+    <Compile Include="FormBajaPersona.Designer.vb">
+      <DependentUpon>FormBajaPersona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormBajaPersona.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormListarMascota.Designer.vb">
       <DependentUpon>FormListarMascota.vb</DependentUpon>
     </Compile>
@@ -159,6 +165,9 @@
     <Compile Include="Persistencia\persistenciaPersonas.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormBajaPersona.resx">
+      <DependentUpon>FormBajaPersona.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormInicio.resx">
       <DependentUpon>FormInicio.vb</DependentUpon>
     </EmbeddedResource>

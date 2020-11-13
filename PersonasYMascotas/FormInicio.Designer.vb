@@ -27,9 +27,10 @@ Partial Class FormInicio
         Me.AltaBuscarYModifcarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FormMascotasToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.AltaModificarBuscarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListarMascotasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.BajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -45,7 +46,7 @@ Partial Class FormInicio
         '
         'FormPersonasToolStripMenuItem2
         '
-        Me.FormPersonasToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaBuscarYModifcarToolStripMenuItem, Me.ListarToolStripMenuItem})
+        Me.FormPersonasToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaBuscarYModifcarToolStripMenuItem, Me.ListarToolStripMenuItem, Me.BajaToolStripMenuItem})
         Me.FormPersonasToolStripMenuItem2.Name = "FormPersonasToolStripMenuItem2"
         Me.FormPersonasToolStripMenuItem2.Size = New System.Drawing.Size(66, 20)
         Me.FormPersonasToolStripMenuItem2.Text = "Personas"
@@ -69,6 +70,18 @@ Partial Class FormInicio
         Me.FormMascotasToolStripMenuItem2.Size = New System.Drawing.Size(69, 20)
         Me.FormMascotasToolStripMenuItem2.Text = "Mascotas"
         '
+        'AltaModificarBuscarToolStripMenuItem
+        '
+        Me.AltaModificarBuscarToolStripMenuItem.Name = "AltaModificarBuscarToolStripMenuItem"
+        Me.AltaModificarBuscarToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.AltaModificarBuscarToolStripMenuItem.Text = "Alta - Buscar - Modificar "
+        '
+        'ListarMascotasToolStripMenuItem
+        '
+        Me.ListarMascotasToolStripMenuItem.Name = "ListarMascotasToolStripMenuItem"
+        Me.ListarMascotasToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.ListarMascotasToolStripMenuItem.Text = "Listar"
+        '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.PersonasYMascotas.My.Resources.Resources.logo_veterinaria
@@ -79,17 +92,11 @@ Partial Class FormInicio
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
-        'AltaModificarBuscarToolStripMenuItem
+        'BajaToolStripMenuItem
         '
-        Me.AltaModificarBuscarToolStripMenuItem.Name = "AltaModificarBuscarToolStripMenuItem"
-        Me.AltaModificarBuscarToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
-        Me.AltaModificarBuscarToolStripMenuItem.Text = "Alta - Buscar - Modificar"
-        '
-        'ListarMascotasToolStripMenuItem
-        '
-        Me.ListarMascotasToolStripMenuItem.Name = "ListarMascotasToolStripMenuItem"
-        Me.ListarMascotasToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
-        Me.ListarMascotasToolStripMenuItem.Text = "Listar"
+        Me.BajaToolStripMenuItem.Name = "BajaToolStripMenuItem"
+        Me.BajaToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
+        Me.BajaToolStripMenuItem.Text = "Baja"
         '
         'FormInicio
         '
@@ -118,4 +125,5 @@ Partial Class FormInicio
     Friend WithEvents ListarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AltaModificarBuscarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ListarMascotasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents BajaToolStripMenuItem As ToolStripMenuItem
 End Class

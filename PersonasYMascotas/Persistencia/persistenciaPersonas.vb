@@ -195,4 +195,20 @@ Public Class persistenciaPersonas
 
         Return listaPersonas
     End Function
+
+    Public Sub bajaPersona(cedula As Integer)
+        Try
+            Dim ClaseSln As New Conexion
+            Dim Connection = ClaseSln.AbrirConexion
+            Dim cmd As New Npgsql.NpgsqlCommand
+            cmd.Connection = Connection
+
+            Dim cadenaDeComandos = "DELETE FROM persona where persona.ci = @ci_"
+
+            cmd.CommandText = cadenaDeComandos
+            cmd.Parameters.Add("@ci_", NpgsqlTypes.NpgsqlDbType.Integer).Value = cedula
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
 End Class
