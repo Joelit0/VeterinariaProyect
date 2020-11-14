@@ -1,7 +1,7 @@
 ﻿Public Class Mascota
     Dim _ci As Integer
     Dim _nombre As String
-    Dim _fechaNacimiento As Date
+    Dim _anioNacimiento As Integer
 
     Public Property Ci As Integer
         Get
@@ -21,18 +21,18 @@
         End Set
     End Property
 
-    Public Property FechaNacimiento As Date
+    Public Property AnioNacimiento As Integer
         Get
-            Return _fechaNacimiento
+            Return _anioNacimiento
         End Get
-        Set(value As Date)
-            _fechaNacimiento = value
+        Set(value As Integer)
+            _anioNacimiento = value
         End Set
     End Property
 
-    Public Sub mascotas(ci_ As Integer, nombre_ As String, fechaNacimiento_ As Date)
+    Public Sub mascotas(ci_ As Integer, nombre_ As String, anioNacimiento_ As Integer)
         Ci = ci_
         Nombre = nombre_
-        FechaNacimiento = fechaNacimiento_
+        AnioNacimiento = anioNacimiento_
     End Sub
 End Class
